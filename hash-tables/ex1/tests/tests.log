@@ -1,3 +1,3 @@
-DEBUG tests/ex1_tests.c:38: ----- RUNNING: ./tests/ex1_tests
-DEBUG tests/ex1_tests.c:33: 
+DEBUG tests/ex1_tests.c:46: ----- RUNNING: ./tests/ex1_tests
+DEBUG tests/ex1_tests.c:41: 
 ----- test_ex1
