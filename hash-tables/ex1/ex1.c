@@ -3,12 +3,31 @@
 #include "hashtable.h"
 #include "ex1.h"
 
+#define MAX(X, Y) (((X) > (Y)) ? (X) : (Y))
+#define MIN(X, Y) (((X) < (Y)) ? (X) : (Y))
+
 Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 {
   HashTable *ht = create_hash_table(16);
 
-  // YOUR CODE HERE
+  for (int i = 0; i < length; i++)
+  {
+    int weight_index = hash_table_retrieve(ht, limit - weights[i]);
+    if (weight_index != -1)
+    {
+      Answer *answer = malloc(sizeof(Answer));
+      answer->index_1 = MAX(weight_index, i);
+      answer->index_2 = MIN(weight_index, i);
 
+      destroy_hash_table(ht);
+
+      return answer;
+    }
+    else
+    {
+      hash_table_insert(ht, weights[i], i);
+    }
+  }
   return NULL;
 }
 
