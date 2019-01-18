@@ -19,7 +19,7 @@ char **reconstruct_trip(Ticket **tickets, int length)
   int j = 0;
   while(1)
   {
-    route[j] = strdup(destination);
+    route[j] = destination;
     if (strcmp(destination, "NONE") == 0) break;
     destination = hash_table_retrieve(ht, destination);
     j++;
